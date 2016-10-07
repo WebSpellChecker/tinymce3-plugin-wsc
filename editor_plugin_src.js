@@ -1,6 +1,9 @@
-var sWSCRequestedFile = WSCCorePath;
-wsc_customerId = wsc_customerId || '';
-sWSCRequestedFile = sWSCRequestedFile + '&customerid=' + wsc_customerId;
+var sWSCRequestedFile = WSCCorePath,
+	customerIdParam = '';
+if(typeof wsc_customerId !== "undefined") {
+	customerIdParam = '&customerid=' + wsc_customerId;
+}
+sWSCRequestedFile = sWSCRequestedFile + customerIdParam;
 var oWSCPluginLoader = null;
 var sWSCQueryStr = null;
 
